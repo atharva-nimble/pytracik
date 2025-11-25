@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "pybind11>=2.10"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytracik"
+dynamic = ["version"]
+description = "TracIK Python Bindings"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Hao Chen", email = "chen960216@gmail.com"}
+]
+keywords = ["robotics", "inverse kinematics"]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+]
+
+[project.urls]
+Homepage = "https://github.com/chenhaox/pytracik"
+
+[tool.setuptools.dynamic]
+version = {attr = "trac_ik.version.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["trac_ik*"]
